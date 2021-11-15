@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "testcluster1-950b"
+    labels:
+        app: "testcluster1-950b"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: testcluster196d6-testcluster1-950b.16b29dd7446347629cc4.centralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "testcluster1-950b"
+                servicePort: 80
